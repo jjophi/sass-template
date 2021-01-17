@@ -1,0 +1,120 @@
+Simple project setup
+--------------------
+sass
+    main.scss
+        _base.scss  
+            (resets, variables, mixins, and any utility classes)
+        _layout.scss 
+            (layout - container and any grid systems)
+        _components.scss
+            (reusable such as buttons, navbars, cards etc)
+
+
+
+Large projects
+--------------
+
+
+I. 7-1 Patterns
+---------------
+    sass 
+        abstracts (or config)
+            _variables.scss
+            _functions.scss
+            _mixins.scss
+
+        base
+            _reset.scss
+            _typography.scss
+
+        components
+            _buttons.scss
+            _carousel.scss
+            _slider.scss
+
+        layout
+            _navigation.scss
+            _grid.scss
+            _header.scss
+            _footer.scss
+            _slidebar.scss
+            _forms.scss
+
+        pages
+            _home.scss
+            _about.scss
+            _contact.scss
+
+        themes
+            _theme.scss
+            _admin.scss
+
+        vendors
+            _bootstrap.scss
+            _jquery-ui.scss
+
+    main.scss 
+
+        @import 'abstracts/variables';
+        @import 'abstracts/functions';
+        @import 'abstracts/mixins';
+
+        @import 'vendors/bootstrap';
+        @import 'vendors/jquery-ui';
+
+        @import 'base/reset';
+        @import 'base/typography';
+
+        @import 'layout/navigation';
+        @import 'layout/grid';
+        @import 'layout/header';
+        @import 'layout/footer';
+        @import 'layout/sidebar';
+        @import 'layout/forms';
+
+        @import 'components/buttons';
+        @import 'components/carousel';
+        @import 'components/slider';
+
+        @import 'pages/home';
+        @import 'pages/about';
+        @import 'pages/contact';
+
+        @import 'themes/theme';
+        @import 'themes/admin';
+
+Ref: https://itnext.io/structuring-your-sass-projects-c8d41fa55ed4
+
+II. 7-1 Patterns
+----------------
+
+    scss
+        01-config
+            _variables.scss
+            _functions.scss
+            _mixins.scss
+        
+        02-base
+            _reset.scss
+            _typography.scss
+            _forms.scss
+        
+        03-objects
+            _buttons.scss
+        
+        04-globals
+            _header.scss
+            _footer.scss
+            _layout.scss
+        
+        05-components
+        06-utilities
+
+
+Ref: https://css-irl.info/a-modern-front-end-workflow-part-3/
+
+
+Node sass
+---------
+/>npm install -g node-sass
+/>node-sass stylesheets/main.scss dist/main.css
